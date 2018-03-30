@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+### Under Construction
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Check back soon!
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[cbalantic[at]gmail.com](mailto:cbalantic@gmail.com)
