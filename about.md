@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-### About Me: 
-
 I am an interdisciplinary PhD candidate in the University of Vermont's Rubenstein School of Environment and Natural Resources. 
 
 I'm part of the the [Vermont Cooperative Fish and Wildlife Research Unit](https://www.coopunits.org/Vermont/) and the [NSF IGERT Smart Grid program](https://www.uvm.edu/smartgrid/), through which I obtained UVM's [Complex Systems Certificate](http://www.vermontcomplexsystems.org/education/certificate/). You can read more about my research [here](https://cbalantic.github.io/research/).
