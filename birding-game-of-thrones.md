@@ -6,7 +6,10 @@ permalink: /birding-game-of-thrones/
 
 Launch the app: [Birding Game of Thrones](https://cbalantic.shinyapps.io/birding-got/).
 
-![birding-got-png]({{ site.baseurl }}/images/birding-got-app.png)
+
+![](http://cbalantic.github.io/images/birding-got-app.png "Birding Game of Thrones (by ear)")
+
+
 
 ### Like identifying birds by ear? Looking for an excuse to rewatch Game of Thrones before the final season comes out in 2019?
 
@@ -15,16 +18,13 @@ show! I've loved noticing Prairie Warblers in the Red Waste and the
 Dothraki Sea, loons wailing at Riverrun, Northern Cardinals chirping
 cheerily away in Dorne, and much more. However, there are a lot of bird
 sounds on this show, and it turns out I just don't know that many birds.
-I could use your help!
 
 ### About This App:
 
 Look at observations across the Game of Thrones world using the
 **Observation Map**, or view them in table form at the **Observation
 Table**. And of course, **Submit Observations** of your own! There isn't
-a lot of data yet, so the map is simple. If I manage to get a lot of
-identifications, I'll get fancier with the exploratory capacity offered
-by the map.
+a lot of data yet, so the map is simple (it turns out I wildly overestimated the amount of time I would want to spend re-watching Game of Thrones...). 
 
 The following resources were indispensible to creating this app: 
 
