@@ -13,8 +13,8 @@ permalink: /publications/
 
 
 ### In Review: 
-**Balantic, C.** & Donovan, T. Temporally-adaptive acoustic sampling to optimize detection across a suite of focal species. *In Review* at Ecology & Evolution.  
+**Balantic, C.** & Donovan, T. Temporally adaptive acoustic sampling to optimize detection across a suite of focal species. *In Review* at Ecology & Evolution.  
 
 
 ### In Prep: 
-**Balantic** et al. Adaptive Management tools for landscape-scale automated acoustic wildlife monitoring with the R package AMMonitoR. *In Prep.*
+**Balantic** et al. Adaptive Management tools for landscape-scale automated acoustic wildlife monitoring with the R package AMMonitor. *In Prep.*
