@@ -15,4 +15,4 @@ permalink: /publications/
  
 
 ### In Review: 
-**Balantic. C.M.** & Donovan, T.M. AMMonitor: Remote monitoring of biodiversity in an adaptive framework with R
+**Balantic. C.M.** & Donovan, T.M. AMMonitor: Remote monitoring of biodiversity in an adaptive framework with R.
