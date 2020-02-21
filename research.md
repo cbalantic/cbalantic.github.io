@@ -17,4 +17,4 @@ As part of my PhD and postdoctoral research at the Vermont Cooperative Fish and 
 **AMMonitor** encompasses data management, [automated detection of target species sounds using statistical learning algorithms](https://www.tandfonline.com/doi/full/10.1080/09524622.2019.1605309), [temporally adaptive audio sampling to maximize detection of focal species](https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.5579), a framework for [dynamic occupancy modeling using acoustic data](https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1002/eap.1854), and a systematic workflow for tracking progress toward management objectives.
 
 
-<sub> Any views or opinions expressed on this website are my own and do not represent any of my affiliated institutions, employers, collaborators, or any U.S. federal agencies. </sub>
+<sub> *Any views or opinions expressed on this website are my own and do not represent any of my affiliated institutions, employers, collaborators, or any U.S. federal agencies.* </sub>
