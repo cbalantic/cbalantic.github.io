@@ -10,6 +10,6 @@ I received my PhD in Natural Resources from the University of Vermont's Rubenste
 
 Professionally, I love solving problems, writing, teaching, [coding](https://github.com/cbalantic/), and getting to do science that studies and supports our incredible network of public lands in the U.S.
 
-Outside of work, my main hobby is creating and playing music on my guitar and piano (and trying to find people to harmonize with). I'm a former NCAA division I rower (captain, Cornell '09). After that, [I got into distance running](https://www.athlinks.com/athletes/67626184/statistics), and am hopeful that I can overcome the persistent injury I've battled for the past several years.
+Outside of work, my main hobby is creating and playing music on my guitar and piano (and trying to find people to harmonize with). I'm a former NCAA division I collegiate rower; after that, [I got into distance running](https://www.athlinks.com/athletes/67626184/statistics), and am hopeful that I can overcome the persistent injury I've battled for the past several years.
 
 <sub> *Any views or opinions expressed on this website are my own and do not represent any of my affiliated institutions, employers, collaborators, or any U.S. federal agencies.* </sub>
