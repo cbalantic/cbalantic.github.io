@@ -9,7 +9,7 @@ I am an ecologist broadly interested in methods that support landscape-scale mon
 ![](http://cbalantic.github.io/images/research1.JPG)
 
 ## Climate Change Refugia 
-As of 2020, I am a postdoc at the [Northeast Climate Adaptation Science Center](https://necsc.umass.edu/), working on developing a national perspective for climate change refugia conservation within the U.S. Department of the Interior. More to come, but while I get my bearings, [this paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0159909) gives an overview of what climate change refugia are and how they might be used as a climate adaptation tool.
+As of 2020, I am a postdoc at the [Northeast Climate Adaptation Science Center](https://necsc.umass.edu/), working on developing a national perspective for climate change refugia conservation within the U.S. Department of the Interior. More to come, but in the meantime, check out [https://www.climaterefugia.org/](Refugia Research Coalition) for an overview of what climate change refugia are and how they are being used as a climate adaptation tool.
 
 ## Tools for Landscape-scale Remote Ecological Monitoring
 As part of my PhD and postdoctoral research at the Vermont Cooperative Fish and Wildlife Research Unit, we wrote an R package that supports remote monitoring of biodiversity in an adaptive framework (**AMMonitor**; available provisionally at [https://code.usgs.gov/vtcfwru/ammonitor](https://code.usgs.gov/vtcfwru/ammonitor)). 
