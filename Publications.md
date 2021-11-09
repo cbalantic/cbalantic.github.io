@@ -10,7 +10,7 @@ permalink: /publications/
 
 Donovan, T.M., **Balantic, C.M.**, et al. 2021. [Remote ecological monitoring with Smartphones and Tasker](https://meridian.allenpress.com/jfwm/article/12/1/163/464074/Remote-Ecological-Monitoring-with-Smartphones-and). Journal of Fish and Wildlife Management. DOI: 10.3996/JFWM-20-071.
 
-Golden, N., Devarajan, K., **Balantic, C.**, Drake, J., Hallworth, M. T., & Morelli, T. L. 2021. [Ten simple rules for productive lab meetings.](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008953). PLOS Computational Biology. DOI: https://doi.org/10.1371/journal.pcbi.1008953
+Golden, N., Devarajan, K., **Balantic, C.**, Drake, J., Hallworth, M. T., & Morelli, T. L. 2021. [Ten simple rules for productive lab meetings](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008953). PLOS Computational Biology. DOI: https://doi.org/10.1371/journal.pcbi.1008953
 
 **Balantic. C.M.** & Donovan, T.M. 2020. [AMMonitor: Remote monitoring of biodiversity in an adaptive framework with R](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13397). Methods in Ecology and Evolution. DOI: 10.1111/2041‐210X.1339. [*R package available here.*](https://code.usgs.gov/vtcfwru/ammonitor)
 
