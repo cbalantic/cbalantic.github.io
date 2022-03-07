@@ -41,7 +41,7 @@ The [“Downloading distributions” section](https://docs.microsoft.com/en-us/w
 ### 2.2. Add the Ubuntu app
 
 Open your Windows PowerShell app. Figure out where your Ubuntu app bundle has downloaded (probably the Download folder?) and run the following command in Windows PowerShell (replacing it with the name of the distribution file): 
-```{r}
+```
 Add-AppxPackage .\replace_app_name_here.appxBundle
 ```
 
@@ -60,7 +60,7 @@ Once WSL is activated and Ubuntu is installed, you are now positioned to install
 ### 3.1. Go to the [BirdNET-Lite Github page](https://github.com/kahst/BirdNET-Lite/)
 
 Open up an Ubuntu terminal and run the following commands. The `git` command will clone BirdNET-Lite to your machine. If you have issues here, you may need to first install git, but I already had it and was able to proceed. The `cd` command then steps you into the BirdNET-Lite folder. 
-```{r}
+```
 git clone https://github.com/kahst/BirdNET-Lite.git
 cd BirdNET-Lite
 ```
@@ -73,7 +73,7 @@ You'll do all of this in your Ubuntu terminal.
 
 I found the Ubuntu / WSL environment confusing to navigate. [This page gives some explanation](https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-windows-10-version-1903/#accessing-linux-files-from-windows). You can run the following command in your Ubuntu terminal to open up the folder location in Windows Explorer (don’t forget the '.' at the end!)
 
-```{r}
+```
 explorer.exe .
 ```
 
@@ -89,7 +89,7 @@ I tried a bunch of things, but could not get BirdNET to run directly out of that
 ### 5. Test out BirdNET and verify that it works.
 Open up your Ubuntu terminal and experiment with running the example commands provided by the [BirdNET-Lite usage documentation](https://github.com/kahst/BirdNET-Lite#usage). First, make sure to `cd` into the folder where you have copied BirdNET. Use quotes around your file path if it contains spaces.
 
-```{r}
+```
 cd "/mnt/c/users/username/path/to/YourBirdNETCopiedFolder"
 python3 analyze.py --i 'example/XC558716 - Soundscape.mp3' --lat 35.4244 --lon -120.7463 --week 18
 ```
@@ -99,13 +99,13 @@ python3 analyze.py --i 'example/XC558716 - Soundscape.mp3' --lat 35.4244 --lon -
 
 If you can't get BirdNET to work, it may be due to a package dependency issue. I specifically ran into an issue with numpy versioning. Error messages indicated that numpy 1.22.1 was necessary, so I went back into my Ubuntu terminal and installed it with the following command: 
 
-```{r}
+```
 sudo pip3 install NumPy==1.22.1
 ```
 
 Once I had the right version of numpy installed, I opened up the `analyze.py` file in my copied BirdNET-Lite folder and made the following modifications. Essentially, you're going to add a few lines of code before the “import numpy as np” line that will allow you to specify numpy 1.22.1: 
 
-```{r}
+```
 # Import correct version of numpy for BirdNET
 import pkg_resources
 pkg_resources.require("numpy==1.22.1")  
@@ -142,7 +142,7 @@ To do this, in the Windows search bar, type and click “Anaconda Prompt (Anacon
 
 In your Anaconda prompt, run the following commands to reinstall all the necessary packages you’ll need to run BirdNET within your conda environment. Below, we are naming our conda environment “pybirdnet”, but you can name it whatever you want:
 
-```{r}
+```
 conda create --name pybirdnet
 conda install -n pybirdnet tensorflow                
 conda install -n pybirdnet -c conda-forge librosa 
@@ -158,7 +158,7 @@ Here is the general script outline I use. The R script below assumes you have a 
 
 Copy this script to your machine and make necessary adjustments that will equip you to experiment with it (files, filepaths, lat longs, etc.). But don't actually run it until you've done step 3. 
 
-```{r}
+```
 
 # install.packages(c('data.table', 'lubridate'))
 library(data.table)
@@ -243,7 +243,7 @@ There might be more elegant ways to do all of this, but I’m not adept enough w
 
 Save the below script in your BirdNET-Lite folder and give it a name like `reticulate-analyze.py` so that you don't overwrite your original `analyze.py` file. 
 
-```{r}
+```
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
