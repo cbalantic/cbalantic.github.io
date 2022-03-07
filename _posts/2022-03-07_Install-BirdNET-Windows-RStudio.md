@@ -12,6 +12,10 @@ My challenge with BirdNET was actually *accessing* it. It was developed for Linu
 
 This guide has two sections. You might only be interested in one of them, so here are the quick links: 
 
+## <a name="installwindows"></a>1. Installing BirdNET on a Windows machine
+
+## <a name="birdnetr"></a>2. Using BirdNET from RStudio via the Reticulate package
+
 ## **[(1)	Installing BirdNET on a Windows machine](#installwindows)**
 
 ## **[(2)	Using BirdNET from RStudio via the Reticulate package](#birdnetr)**
@@ -25,7 +29,7 @@ I would not have been able to do this without helpful tips from a few particular
 *The steps below worked on a Dell running Windows 10, and I installed [BirdNET-Lite](https://github.com/kahst/BirdNET-Lite/). Your mileage may vary; software and operating systems change, documentation is hard to maintain, and depending on your workplace, you might not have the admin rights to complete all of these steps. I'm not a computer scientist. My aim is simply to share what worked for me, and start filling the gap between BirdNET and it's potential user base. There are probably vastly better ways to do all of this (virtual machine, docker container, etc.?). If you know of a better way, I encourage you to document your process and tell people about it -- let's help this field move forward.*
 
 
-# Part 1: Installing BirdNET on a Windows machine {#installwindows}
+# [Part 1: Installing BirdNET on a Windows machine](#installwindows)
 
 What ultimately worked for me was to activate [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about). I tried several workarounds to avoid using WSL, all resulting in headaches and time wasted. You will need admin rights or access to IT staff with rights to activate WSL on your Windows machine. 
 
@@ -117,7 +121,7 @@ Once you've saved those modifications in your `analyze.py` file, return to your 
 
 
 
-# Part 2. Using BirdNET-Lite from R with Reticulate {#birdnetr}
+# [Part 2. Using BirdNET-Lite from R with Reticulate](#birdnetr)
 
 **This section assumes you already have BirdNET-Lite installed.**
 
