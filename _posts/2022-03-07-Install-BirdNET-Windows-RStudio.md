@@ -1,8 +1,6 @@
 ---
 title: "Installing BirdNET on a Windows Machine and running it from RStudio"
-author: "Cathleen Balantic"
-date: "3/7/2022"
-output: html_document
+layout: post
 ---
 
 
