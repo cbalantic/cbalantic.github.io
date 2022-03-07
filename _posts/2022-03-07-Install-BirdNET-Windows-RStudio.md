@@ -10,6 +10,15 @@ If you're interested in birds and bioacoustics, you're probably aware of [BirdNE
 
 My challenge with BirdNET was actually *accessing* it. It was developed for Linux and Python users, and in my day job, I work on a Windows machine where I don't have admin rights. I'm also much more comfortable in R than I am in Python. After many failures, I have finally installed BirdNET on my Windows machine, and I'm now running it directly from RStudio. After all the frustration to install it, it was so worth the effort! I suspect BirdNET is going to be a game-changer for avian bioacoustics. I would not have been able to do this without helpful tips from a few particular colleagues. Thank you so much for your assistance, patience, and time.
 
+- [Part 1. Installing BirdNET on a Windows machine](#part-1-installing-birdnet-on-a-windows-machine)
+  * [1. Activate WSL](#1-activate-wsl)
+  * [2. Install an Ubuntu Distribution](#2-install-an-ubuntu-distribution)
+  * [3. Install BirdNET-Lite](#3-install-birdnet-lite)
+- [Part 2. Using BirdNET-Lite from R with Reticulate](#part-2-using-birdnet-lite-from-r-with-reticulate)
+  * [1. Set up a conda environment](#1-set-up-a-conda-environment)
+  * [2. Set up an R script from which to interface with BirdNET](#2-set-up-an-r-script-from-which-to-interface-with-birdnet)
+  * [3. Modify the BirdNET analyze script](#3-modify-the-birdnet-analyze-script)
+  * [4. Run BirdNET from RStudio](#4-run-birdnet-from-rstudio)
  
 **Disclaimer:**
 
@@ -74,11 +83,11 @@ C:\\Users\\Username\\AppData\\Local\\Packages\\CanonicalGroupLimited.UbuntuonWin
 
 I would avoid messing around with this folder. That said, if you can't seem to get BirdNET to run as expected, you might need to try the next step...
 
-### 4. Copy your BirdNET-Lite folder out of Ubuntu and somewhere onto your Windows machine
+### 3.4. Copy your BirdNET-Lite folder out of Ubuntu and somewhere onto your Windows machine
 
 I tried a bunch of things, but could not get BirdNET to run directly out of that long folder in my WSL Ubuntu setup. After I ran out of ideas, I simply copied my BirdNET-Lite folder locally onto my machine to see if it would work from there, and lo and behold, it did. For all of the following steps, I am interacting with BirdNET directly from my locally copied folder as a Windows user. 
 
-### 5. Test out BirdNET and verify that it works.
+### 3.5. Test out BirdNET and verify that it works.
 Open up your Ubuntu terminal and experiment with running the example commands provided by the [BirdNET-Lite usage documentation](https://github.com/kahst/BirdNET-Lite#usage). First, make sure to `cd` into the folder where you have copied BirdNET. Use quotes around your file path if it contains spaces.
 
 ```
@@ -87,7 +96,7 @@ python3 analyze.py --i 'example/XC558716 - Soundscape.mp3' --lat 35.4244 --lon -
 ```
 
 
-### 6. Make any necessary Python dependency adjustments
+### 3.6. Make any necessary Python dependency adjustments
 
 If you can't get BirdNET to work, it may be due to a package dependency issue. I specifically ran into an issue with numpy versioning. Error messages indicated that numpy 1.22.1 was necessary, so I went back into my Ubuntu terminal and installed it with the following command: 
 
@@ -226,7 +235,7 @@ for (i in 1:length(recIDs)) {
 ```
 
 
-### 3. Modify BirdNET’s analyze.py function 
+### 3. Modify the BirdNET analyze script 
 Before actually running that R script, we need to make a few modifications to BirdNET's `analyze.py` script. The script imports a package called `argparse`. This package is used toward the end of `analyze.py` in several lines that say `parser.add_argument(...)` in which the user can input `i`, `o`, `lat`, `lon`, `week`, etc. into the Ubuntu terminal. Argparse is meant specifically for use through the command line. To process audio files from RStudio, we don’t use the command line, so we’re going to comment out (or delete) any references to this parser code. Once we’ve made those modifications, we are going to slightly modify the `analyze.py` script and feed in those BirdNET arguments through our R script using Reticulate's `py_run_string()` function. 
 
 There might be more elegant ways to do all of this, but I’m not adept enough with Python to know what they are.
