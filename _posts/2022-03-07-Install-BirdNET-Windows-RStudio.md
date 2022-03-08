@@ -20,7 +20,7 @@ output:
 
 **Note: if you're reading this from my blog, [you might want to read it from Github for better code formatting](https://github.com/cbalantic/cbalantic.github.io/blob/master/_posts/2022-03-07-Install-BirdNET-Windows-RStudio.md).**
 
-If you're interested in birds and bioacoustics, you're probably aware of [BirdNET](https://birdnet.cornell.edu/), a bird sound recognition program developed by the [Cornell Center for Conservation Bioacoustics](https://www.birds.cornell.edu/ccb/).  There's a BirdNET app you can use directly on your phone for on-the-go bird sound identifications, but what is more useful to me as a bioacoustics scientist is the [BirdNET Github repository](https://github.com/kahst/BirdNET-Lite). This is a promising free tool for processing a ton of audio data relatively quickly and understanding something about which avian species are present.
+If you're interested in birds and bioacoustics, you're probably aware of [BirdNET](https://birdnet.cornell.edu/), a bird sound recognition program developed by the [Cornell Center for Conservation Bioacoustics](https://www.birds.cornell.edu/ccb/).  There's a BirdNET app you can use directly on your phone for on-the-go bird sound identifications, but more useful to me as a bioacoustics scientist is the [BirdNET Github repository](https://github.com/kahst/BirdNET-Lite). This is a promising free tool for processing a ton of audio data relatively quickly and understanding something about which avian species are present.
 
 My challenge with BirdNET was actually *accessing* it. It was developed for Linux and Python users. In my job, I work on a Windows machine where I don't have admin rights, and I'm much more comfortable in R than I am in Python. After many failures, I have finally installed BirdNET on my Windows machine, and I'm now running it directly from RStudio. It was so worth the effort! I suspect BirdNET is going to be a game-changer for avian bioacoustics. I would not have been able to do this without helpful tips from patient and generous colleagues. I'm hoping to pay it forward by writing down how I got this to work, in case it helps someone else. 
 
@@ -31,21 +31,21 @@ My challenge with BirdNET was actually *accessing* it. It was developed for Linu
 
 # Part 1. Installing BirdNET on a Windows machine
 
-What ultimately worked for me was to activate [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about). I tried several workarounds to avoid using WSL, all resulting in headaches and time wasted. You will need admin rights or access to IT staff with rights to activate WSL on your Windows machine. 
+What ultimately worked for me was to activate [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about). I tried several workarounds to avoid using WSL, all resulting in headaches and time wasted. You will need admin rights (or access to staff with admin rights) to activate WSL.
 
 ## 1. Activate WSL
-Go to [How to install Linux WSL2 on Windows 10 and Windows 11](https://www.windowscentral.com/how-install-wsl2-windows-10). This link contains the instructions I used to activate WSL a few weeks ago. With the rollout of Windows 11, it looks like the contents of the link have already changed slightly, so your process may be a bit different, but the point is just to get WSL activated. This step required an IT override on my work machine.
+Go to [How to install Linux WSL2 on Windows 10 and Windows 11](https://www.windowscentral.com/how-install-wsl2-windows-10). This link contains the instructions I used to activate WSL a few weeks ago. With the rollout of Windows 11, it looks like the contents of the link have already changed slightly, so your process may be a bit different, but the point is to get WSL activated. This step required an IT override on my work machine.
 
 ## 2. Install an Ubuntu Distribution
 See [Manual installation steps for older versions of WSL](https://docs.microsoft.com/en-us/windows/wsl/install-manual) for more info. Since I was installing on a work machine, I did not have access to the Microsoft store, so I made sure to pay attention to the section on "Downloading distributions". Based on recommendations from others, I installed Ubuntu. I highly recommend reading through that link to get an idea of what you'll be doing. I did not need an IT override for this step.
 
 ### 2.1. Download Ubuntu
-The [“Downloading distributions” section](https://docs.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions) contains options for Ubuntu, Ubuntu 20.04, Ubuntu 20.04 ARM, Ubunto 18.04, 18.04 ARM, and 16.04. I found this confusing but after some internet searching, decided on Ubuntu 20.04 and got on with my life. I clicked to manually download Ubuntu 20.04. 
+The [“Downloading distributions” section](https://docs.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions) contains options for Ubuntu, Ubuntu 20.04, Ubuntu 20.04 ARM, Ubunto 18.04, 18.04 ARM, and 16.04. After some internet searching, I decided on Ubuntu 20.04 and got on with my life. I later realized that [BirdNET-Lite was developed under Ubuntu 18.04](https://github.com/kahst/BirdNET-Lite#setup-ubuntu-1804). Luckily, it seems to work great with 20.04 too.
 
 
 ### 2.2. Add the Ubuntu app
 
-Open your Windows PowerShell app. Figure out where your Ubuntu app bundle has downloaded (probably the Download folder?) and run the following command in Windows PowerShell (replacing it with the name of the distribution file): 
+In the Windows search bar, type "Windows Powershell" and click to open the Windows PowerShell app. Figure out where your Ubuntu app bundle has downloaded (probably the Download folder?) and run the following command in Windows PowerShell (replacing it with the name of the distribution file): 
 
 ```r
 Add-AppxPackage .\replace_app_name_here.appxBundle
@@ -55,7 +55,7 @@ Verify that you now have the orange Ubuntu app on your machine.
  
 ### 2.3. Set up Linux username and password
 
-I followed [these directions](https://docs.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password) to set up my username and password. Tip: When entering your password, it will *look* like nothing is being entered. You are entering the password, but the Ubuntu terminal does not echo your password for security reasons.
+Open an Ubuntu terminal (using that orange Ubuntu app icon) and follow [these directions](https://docs.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password) to set up your Linux username and password. Tip: When entering your password, it will *look* like nothing is being entered. You are entering the password, but the Ubuntu terminal does not echo your password for security reasons.
 
 ## 3. Install BirdNET-Lite
 
@@ -135,19 +135,17 @@ First, you’ll set up a conda environment in R. Next, you’ll set up an R scri
 
 ## 1. Set up a conda environment
 
-As an R user, one of the frustrating things about Python is the setup and package management. In R, it feels like I can just install RStudio, install whatever packages I need, and sail into the sunset. Python package dependency management feels a lot more complex and rife with pitfalls; one of the workarounds for dealing with that is to use conda environments. [As explained here](https://towardsdatascience.com/a-guide-to-conda-environments-bc6180fc533), conda environments help manage different package dependencies for specific projects. They're similar to virtual environments. In fact, I originally tried using a Python virtual environment from RStudio, but couldn't get R/Reticulate to work with the virtual environment. I decided to try a conda environment instead, and that worked. I found [this guide](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) helpful for understanding more about setting up and managing conda environments. 
+As an R user, one of the frustrating things about Python is the setup and package management. In R, it feels like I can just install RStudio, install whatever packages I need, and sail into the sunset. Python package dependency management feels a lot more complex and rife with pitfalls; one of the workarounds for dealing with that is to use conda environments. [As explained here](https://towardsdatascience.com/a-guide-to-conda-environments-bc6180fc533), conda environments help manage and isolate different package dependencies for specific projects. They're similar to virtual environments. In fact, I originally tried using a Python virtual environment from RStudio, but couldn't get R/Reticulate to work with it. I tried a conda environment instead, and that worked. I found [this guide](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) helpful for understanding more about setting up and managing conda environments. 
 
 ### 1.1. You might want to install Python... again. This time, Anaconda. 
 
-After many false starts with Reticulate/RStudio, I gave up on getting Reticulate to recognize my previously installed Python versions and ended up manually installing the latest version of [Anaconda](https://www.anaconda.com/).
+After many false starts with Reticulate/RStudio, I gave up on getting Reticulate to recognize my previously installed Python versions and ended up manually installing the latest version of [Anaconda](https://www.anaconda.com/). I sensed that my problems stemmed from the chaotic nature of my previous Python package installs, and hoped that Anaconda's promise of simplified package management would enable easier access from Reticulate. I was right!
 
-### 1.2. Open up an Anaconda prompt. 
+### 1.2. Set up your BirdNET conda environment. 
 
-To do this, in the Windows search bar, type and click “Anaconda Prompt (Anaconda3)”. I had a few versions of Anaconda prompts from various Python installs over the past year, but this was the one that worked correctly.
+First, open up an Anaconda prompt. In the Windows search bar, type and click “Anaconda Prompt (Anaconda3)”. I had a few versions of Anaconda prompts from various Python installs over the past year, but this was the one that worked correctly.
 
-### 1.3. Set up your BirdNET conda environment. 
-
-In your Anaconda prompt, run the following commands to reinstall all the necessary packages you’ll need to run BirdNET within your conda environment. Below, we are naming our conda environment “pybirdnet”, but you can name it whatever you want:
+In the Anaconda prompt, run the following commands to reinstall all the necessary packages you’ll need to run BirdNET within your conda environment. Below, we are naming our conda environment “pybirdnet”, but you can name it whatever you want:
 
 ```python
 conda create --name pybirdnet
@@ -163,7 +161,7 @@ Make sure you know where this pybirdnet environment was created. For me, this li
 
 Here is the general script outline I use. The R script below assumes you have a folder full of wave files from a single monitoring location that you want to analyze. It also assumes that your wave file names have the naming convention SITEID_YYYYMMDD_HHMMSS.wav. If this is not the case, you'll need to do some tinkering.
 
-Copy this script to your machine and make necessary adjustments that will equip you to experiment with it (files, filepaths, lat longs, etc.). But don't actually run it until you've done step 3. 
+Copy and save this script to your machine and make necessary adjustments that will equip you to experiment with it (files, filepaths, lat longs, etc.). But don't actually run it until you've done step 3. 
 
 ```r
 
@@ -240,7 +238,7 @@ for (i in 1:length(recIDs)) {
 
 
 ### 3. Modify the BirdNET analyze script 
-Before actually running that R script, we need to make a few modifications to BirdNET's `analyze.py` script. The script imports a package called `argparse`. This package is used toward the end of `analyze.py` in several lines that say `parser.add_argument(...)` in which the user can input `i`, `o`, `lat`, `lon`, `week`, etc. into the Ubuntu terminal. Argparse is meant specifically for use through the command line. To process audio files from RStudio, we don’t use the command line, so we’re going to comment out (or delete) any references to this parser code. Once we’ve made those modifications, we are going to slightly modify the `analyze.py` script and feed in those BirdNET arguments through our R script using Reticulate's `py_run_string()` function. 
+Before actually running that R script, we need to make a few modifications to BirdNET's `analyze.py` script. The `analyze.py` script imports a Python package called `argparse`. This package is used toward the end of `analyze.py` in several lines that say `parser.add_argument(...)` in which the user can input `i`, `o`, `lat`, `lon`, `week`, etc. into the Ubuntu terminal. `argparse` is meant specifically for use through the command line. We won't be using the command line to process audio files from RStudio, so we’re going to comment out (or delete) any references to this parser code. Once we’ve made those modifications, we need to slightly modify the `analyze.py` script and feed in our BirdNET arguments through the R script using Reticulate's `py_run_string()` function. 
 
 There might be more elegant ways to do all of this, but I’m not adept enough with Python to know what they are.
 
@@ -441,7 +439,7 @@ def main():
     global WHITE_LIST
 
 
-    # Comment out parser because not using command line in reticulate.
+    # CB: Comment out parser because not using command line in reticulate.
     #   ==> In R, we will input args as args_[name] in py_run_string(), e.g. py_run_string("args_lon = 135.8911")
     # Parse passed arguments
     # parser = argparse.ArgumentParser()
@@ -492,6 +490,6 @@ if __name__ == '__main__':
 
 Once you've saved your `reticulate-analyze.py` file in your BirdNET-Lite folder, head back to the R script above and modify it to point to your files of interest. Hopefully, you'll soon be celebrating that you can run BirdNET from RStudio.
 
-...and that's all I've got! Thank you to everybody who helped me figure out various components of how to do this (the R/Reticulate part wasn't bad, but the install process took a village, seriously). Huge thank you to the BirdNET developers and everybody at Cornell Center for Conservation Bioacoustics for creating this tool and making it free. 
+...and that's all I've got! Thank you to everybody who helped me figure out various components of how to do this (the install process took a village). Huge thank you to the BirdNET developers and everybody at Cornell Center for Conservation Bioacoustics for creating this tool and making it free. 
 
 *Any views or opinions expressed on this website are mine alone, and do not represent endorsement by any affiliated institutions, employers, collaborators, or any U.S. federal agencies. This blog post merely shares what worked for me, and is not meant to serve as official guidance.*
