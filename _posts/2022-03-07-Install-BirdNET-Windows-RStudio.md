@@ -5,11 +5,7 @@ output:
   html_document:
       df_print: paged
 ---
-
-If you're interested in birds and bioacoustics, you're probably aware of [BirdNET](https://birdnet.cornell.edu/), a bird sound recognition program developed by the [Cornell Center for Conservation Bioacoustics](https://www.birds.cornell.edu/ccb/).  There's a BirdNET app you can use directly on your phone for on-the-go bird sound identifications, but what is more useful to me as a bioacoustics scientist is the [BirdNET Github repository](https://github.com/kahst/BirdNET-Lite). This is a promising free tool for processing a ton of audio data relatively quickly and understanding something about which avian species are present.
-
-My challenge with BirdNET was actually *accessing* it. It was developed for Linux and Python users, and in my day job, I work on a Windows machine where I don't have admin rights. I'm also much more comfortable in R than I am in Python. After many failures, I have finally installed BirdNET on my Windows machine, and I'm now running it directly from RStudio. After all the frustration to install it, it was so worth the effort! I suspect BirdNET is going to be a game-changer for avian bioacoustics. I would not have been able to do this without helpful tips from patient and generous colleagues, and I'm hoping to pay it forward by writing down how I got this to work. 
-
+- [Background](#background)
 - [Part 1. Installing BirdNET on a Windows machine](#part-1-installing-birdnet-on-a-windows-machine)
   * [1. Activate WSL](#1-activate-wsl)
   * [2. Install an Ubuntu Distribution](#2-install-an-ubuntu-distribution)
@@ -19,7 +15,15 @@ My challenge with BirdNET was actually *accessing* it. It was developed for Linu
   * [2. Set up an R script from which to interface with BirdNET](#2-set-up-an-r-script-from-which-to-interface-with-birdnet)
   * [3. Modify the BirdNET analyze script](#3-modify-the-birdnet-analyze-script)
   * [4. Run BirdNET from RStudio](#4-run-birdnet-from-rstudio)
- 
+
+# Background
+
+**Note: if you're reading this from my blog, [you might want to read it from Github for better code formatting](https://github.com/cbalantic/cbalantic.github.io/edit/master/_posts/2022-03-07-Install-BirdNET-Windows-RStudio.md).**
+
+If you're interested in birds and bioacoustics, you're probably aware of [BirdNET](https://birdnet.cornell.edu/), a bird sound recognition program developed by the [Cornell Center for Conservation Bioacoustics](https://www.birds.cornell.edu/ccb/).  There's a BirdNET app you can use directly on your phone for on-the-go bird sound identifications, but what is more useful to me as a bioacoustics scientist is the [BirdNET Github repository](https://github.com/kahst/BirdNET-Lite). This is a promising free tool for processing a ton of audio data relatively quickly and understanding something about which avian species are present.
+
+My challenge with BirdNET was actually *accessing* it. It was developed for Linux and Python users. In my job, I work on a Windows machine where I don't have admin rights, and I'm much more comfortable in R than I am in Python. After many failures, I have finally installed BirdNET on my Windows machine, and I'm now running it directly from RStudio. It was so worth the effort! I suspect BirdNET is going to be a game-changer for avian bioacoustics. I would not have been able to do this without helpful tips from patient and generous colleagues. I'm hoping to pay it forward by writing down how I got this to work, in case it helps someone else. 
+
 **Disclaimer:**
 
 *The steps below worked on a Dell running Windows 10, and I installed [BirdNET-Lite](https://github.com/kahst/BirdNET-Lite/). Your mileage may vary; software and operating systems change, documentation is hard to maintain, and depending on your workplace, you might not have the admin rights to complete all of these steps. I'm not a computer scientist. My aim is simply to share what worked for me, and start filling the gap between BirdNET and it's potential user base. There are probably vastly better ways to do all of this (virtual machine, docker container, etc.?). If you know of a better way, I encourage you to document your process and tell people about it -- let's help this field move forward.*
