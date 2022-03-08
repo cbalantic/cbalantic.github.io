@@ -182,12 +182,14 @@ py_config()
 # Point Reticulate to your conda environment
 use_condaenv(condaenv = "pybirdnet", required = TRUE)
 
-# This is another line of code for making sure Reticulate is using the Python you want it to use. I've read that people often have trouble getting this line to work, which is why we also do the previous Sys.setenv() command
+# use_python is another way to tell Reticulate which Python to use
+# I couldn't get this line to work; hence the previous Sys.setenv() command
 use_python('C:/Users/Username/Anaconda3/envs/pybirdnet/python.exe', 
            required = TRUE)
 
-# Below, I assume you have a folder full of wave files from a single monitoring location that you want to analyze
-# I also assume file names follow the naming convention SITEID_YYYYMMDD_HHMMSS.wav
+# Below, I assume:
+#  * you have a folder of wave files from a single monitoring location
+#  * file names follow the naming convention SITEID_YYYYMMDD_HHMMSS.wav
 
 # Identify file path string names
 audio.fp <- 'Path:/To/Folder/Of/Audio/'
@@ -209,13 +211,13 @@ result.fp <- paste0('Path:/To/Folder/For/Storing/BirdNET-Results/BirdNET_',
                         '[[', 1)), '.csv')
 
 # Customize any other params as desired:
-# (currently setting these to BirdNET defaults, but thinking ahead to R function)
+# (currently set these to BirdNET defaults, but thinking ahead to R function)
 ovlp <- 0.0
 sens <- 1.0
 minconf <- 0.1
 customlist <- NULL
 
-# Loop through your audio folder and process each wave using BirdNET: 
+# Loop through audio folder and process each wave using BirdNET: 
 for (i in 1:length(recIDs)) {
   cat(paste0('Working on ', i, ' of ', length(recIDs), ': ', recIDs[i], '\n'))
   setwd('C:/WhateverYouNamedYourLocalBirdNETFolder/')
