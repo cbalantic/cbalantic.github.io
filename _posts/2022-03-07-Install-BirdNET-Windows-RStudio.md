@@ -3,7 +3,6 @@ title: "Installing BirdNET on a Windows Machine and running it from RStudio"
 layout: post
 output:
   html_document:
-    df_print: paged
 ---
 
 If you're interested in birds and bioacoustics, you're probably aware of [BirdNET](https://birdnet.cornell.edu/), a bird sound recognition program developed by the [Cornell Center for Conservation Bioacoustics](https://www.birds.cornell.edu/ccb/). This is a promising free tool for processing a ton of audio data relatively quickly and understanding something about which avian species are present.
@@ -232,8 +231,6 @@ for (i in 1:length(recIDs)) {
 
 # Check on a result!
 (check <- data.table(read.csv(file = result.fp[i], header = TRUE, sep = ';')))
-
-
 ```
 
 
