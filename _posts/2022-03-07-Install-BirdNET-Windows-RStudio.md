@@ -248,7 +248,7 @@ There might be more elegant ways to do all of this, but I’m not adept enough w
 
 **Note that I was also having a minor issue with the option to load a custom species list, so I opted to comment this out of the analyze.py file for now. I assume it's an easy fix, but I don't currently need it.**
 
-Save the below script in your BirdNET-Lite folder and give it a name like `reticulate-analyze.py` so that you don't overwrite your original `analyze.py` file. 
+The script below makes all of the changes I've outlined. Save this script in your BirdNET-Lite folder and give it a name like `reticulate-analyze.py` so that you don't overwrite your original `analyze.py` file. 
 
 ```python
 
