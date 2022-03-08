@@ -68,7 +68,7 @@ git clone https://github.com/kahst/BirdNET-Lite.git
 cd BirdNET-Lite
 ```
 
-### 3.2. Next, follow the installation instructions at the [BirdNET-Lite Github page](https://github.com/kahst/BirdNET-Lite/)
+### 3.2. Next, follow the installation instructions at the [BirdNET-Lite Github page (Setup section)](https://github.com/kahst/BirdNET-Lite#setup-ubuntu-1804)
 
 You'll do all of this in your Ubuntu terminal. 
 
@@ -115,7 +115,7 @@ pkg_resources.require("numpy==1.22.1")
 import numpy as np
 ```
 
-Once you've saved those modifications in your `analyze.py` file, return to your Ubuntu terminal and try step 5 again. Check your copied version of the BirdNET-Lite folder and make sure that `results.csv` is showing up as recently modified. If so, BirdNET has been successfully installed on your machine, and you’re ready to move on to using it from R! I would definitely suggest continuing to experiment with it from Ubuntu first -- play with analyzing your own files, get a grasp on modifying the input arguments, etc. 
+Once you've saved those modifications in your `analyze.py` file, return to your Ubuntu terminal and try step 3.5 again. Check your copied version of the BirdNET-Lite folder and make sure that `results.csv` is showing up as recently modified. If so, BirdNET has been successfully installed on your machine, and you’re ready to move on to using it from R! I would definitely suggest continuing to experiment with it from Ubuntu first -- play with analyzing your own files, get a grasp on modifying the input arguments, etc. 
 
 
 
