@@ -240,7 +240,9 @@ for (i in 1:length(recIDs)) {
 
 
 ### 3. Modify the BirdNET analyze script 
-Before actually running that R script, we need to make a few modifications to BirdNET's `analyze.py` script. The `analyze.py` script imports a Python package called `argparse`. This package is used toward the end of `analyze.py` in several lines that say `parser.add_argument(...)` in which the user can input `i`, `o`, `lat`, `lon`, `week`, etc. into the Ubuntu terminal. `argparse` is meant specifically for use through the command line. We won't be using the command line to process audio files from RStudio, so we’re going to comment out (or delete) any references to this parser code. Once we’ve made those modifications, we need to slightly modify the `analyze.py` script and feed in our BirdNET arguments through the R script using Reticulate's `py_run_string()` function. 
+Before actually running that R script, we need to make a few modifications to BirdNET's `analyze.py` script. The `analyze.py` script imports a Python package called `argparse`. This package is used toward the end of `analyze.py` in several lines that say `parser.add_argument()` in which the user can input `i`, `o`, `lat`, `lon`, `week`, etc. into the Ubuntu terminal. `argparse` is meant specifically for use through the command line. 
+
+We won't be using the command line to process audio files from RStudio, so we’re going to comment out (or delete) any references to this `parser.add_argument()` code. Additionally, we will modify references to the `analyze.py` argument names and feed in our BirdNET arguments through the R script using Reticulate's `py_run_string()` function. 
 
 There might be more elegant ways to do all of this, but I’m not adept enough with Python to know what they are.
 
