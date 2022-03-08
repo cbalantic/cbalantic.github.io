@@ -16,10 +16,6 @@ output:
   * [3. Modify the BirdNET analyze script](#3-modify-the-birdnet-analyze-script)
   * [4. Run BirdNET from RStudio](#4-run-birdnet-from-rstudio)
 
-code.r{
-  font-size: 8px;
-}
-
 # Background
 
 **Note: if you're reading this from my blog, [you might want to read it from Github for better code formatting](https://github.com/cbalantic/cbalantic.github.io/blob/master/_posts/2022-03-07-Install-BirdNET-Windows-RStudio.md).**
