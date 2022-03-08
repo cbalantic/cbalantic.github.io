@@ -43,7 +43,7 @@ The [“Downloading distributions” section](https://docs.microsoft.com/en-us/w
 
 Open your Windows PowerShell app. Figure out where your Ubuntu app bundle has downloaded (probably the Download folder?) and run the following command in Windows PowerShell (replacing it with the name of the distribution file): 
 
-```windows
+```r
 Add-AppxPackage .\replace_app_name_here.appxBundle
 ```
 
@@ -63,7 +63,7 @@ Once WSL is activated and Ubuntu is installed, you are now positioned to install
 
 Open up an Ubuntu terminal and run the following commands. The `git` command will clone BirdNET-Lite to your machine. If you have issues here, you may need to first install git, but I already had it and was able to proceed. The `cd` command then steps you into the BirdNET-Lite folder. 
 
-```ubuntu
+```r
 git clone https://github.com/kahst/BirdNET-Lite.git
 cd BirdNET-Lite
 ```
@@ -76,7 +76,7 @@ You'll do all of this in your Ubuntu terminal.
 
 I found the Ubuntu / WSL environment confusing to navigate. [This page gives some explanation](https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-windows-10-version-1903/#accessing-linux-files-from-windows). You can run the following command in your Ubuntu terminal to open up the folder location in Windows Explorer (don’t forget the '.' at the end!)
 
-```ubuntu
+```r
 explorer.exe .
 ```
 
@@ -92,7 +92,7 @@ I tried a bunch of things, but could not get BirdNET to run directly out of that
 ### 3.5. Test out BirdNET and verify that it works.
 Open up your Ubuntu terminal and experiment with running the example commands provided by the [BirdNET-Lite usage documentation](https://github.com/kahst/BirdNET-Lite#usage). First, make sure to `cd` into the folder where you have copied BirdNET. Use quotes around your file path if it contains spaces.
 
-```ubuntu
+```r
 cd "/mnt/c/users/username/path/to/YourBirdNETCopiedFolder"
 python3 analyze.py --i 'example/XC558716 - Soundscape.mp3' --lat 35.4244 --lon -120.7463 --week 18
 ```
@@ -102,7 +102,7 @@ python3 analyze.py --i 'example/XC558716 - Soundscape.mp3' --lat 35.4244 --lon -
 
 If you can't get BirdNET to work, it may be due to a package dependency issue. I specifically ran into an issue with numpy versioning. Error messages indicated that numpy 1.22.1 was necessary, so I went back into my Ubuntu terminal and installed it with the following command: 
 
-```ubuntu
+```r
 sudo pip3 install NumPy==1.22.1
 ```
 
@@ -145,7 +145,7 @@ To do this, in the Windows search bar, type and click “Anaconda Prompt (Anacon
 
 In your Anaconda prompt, run the following commands to reinstall all the necessary packages you’ll need to run BirdNET within your conda environment. Below, we are naming our conda environment “pybirdnet”, but you can name it whatever you want:
 
-```anaconda
+```python
 conda create --name pybirdnet
 conda install -n pybirdnet tensorflow                
 conda install -n pybirdnet -c conda-forge librosa 
