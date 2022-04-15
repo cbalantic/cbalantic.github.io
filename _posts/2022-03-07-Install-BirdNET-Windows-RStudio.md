@@ -159,6 +159,8 @@ Make sure you know where this pybirdnet environment was created. For me, this li
 
 ## 2. Set up an R script from which to interface with BirdNET
 
+**Updated 4/15/2022: I'm keeping all of this below for posterity, but note that once you have installed BirdNET-Lite and set up a conda environment, now you can use the function [birdnet_run](https://github.com/nationalparkservice/NSNSDAcoustics#running-birdnet-from-rstudio-with-birdnet_run) from the package [NSNSDAcoustics](https://github.com/nationalparkservice/NSNSDAcoustics) instead of proceeding with steps 2, 3, and 4.**
+
 Here is the general script outline I use. The R script below assumes you have a folder full of wave files from a single monitoring location that you want to analyze. It also assumes that your wave file names have the naming convention SITEID_YYYYMMDD_HHMMSS.wav. If this is not the case, you'll need to do some tinkering.
 
 Copy and save this script to your machine and make necessary adjustments that will equip you to experiment with it (files, filepaths, lat longs, etc.). But don't actually run it until you've done step 3. 
@@ -240,6 +242,9 @@ for (i in 1:length(recIDs)) {
 
 
 ### 3. Modify the BirdNET analyze script 
+
+**Updated 4/15/2022: I'm keeping all of this below for posterity, but note that once you have installed BirdNET-Lite and set up a conda environment, now you can use the function [birdnet_run](https://github.com/nationalparkservice/NSNSDAcoustics#running-birdnet-from-rstudio-with-birdnet_run) from the package [NSNSDAcoustics](https://github.com/nationalparkservice/NSNSDAcoustics) instead of proceeding with steps 2, 3, and 4. The modified BirdNET 'analyze.py' script described in this section can be installed directly with NSNSDAcoustics. It is located [here](https://github.com/nationalparkservice/NSNSDAcoustics/blob/main/inst/reticulate-analyze.py).**
+
 Before actually running that R script, we need to make a few modifications to BirdNET's `analyze.py` script. The `analyze.py` script imports a Python package called `argparse`. This package is used toward the end of `analyze.py` in several lines that say `parser.add_argument()` in which the user can input `i`, `o`, `lat`, `lon`, `week`, etc. into the Ubuntu terminal. `argparse` is meant specifically for use through the command line. 
 
 We won't be using the command line to process audio files from RStudio, so we’re going to comment out (or delete) any references to this `parser.add_argument()` code. Additionally, we will modify references to the `analyze.py` argument names and feed in our BirdNET arguments through the R script using Reticulate's `py_run_string()` function. 
