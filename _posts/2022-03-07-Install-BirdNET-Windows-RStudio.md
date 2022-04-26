@@ -18,6 +18,8 @@ output:
 
 # Background
 
+**Update 4/26/2022: [BirdNET was updated sometime in April 2022](https://github.com/kahst/BirdNET-Analyzer), so it's possible that everything I wrote about here got a lot easier and that none of this is relevant anymore.**
+
 **Note: if you're reading this from my blog, [you might want to read it from Github for better code formatting](https://github.com/cbalantic/cbalantic.github.io/blob/master/_posts/2022-03-07-Install-BirdNET-Windows-RStudio.md).**
 
 If you're interested in birds and bioacoustics, you're probably aware of [BirdNET](https://birdnet.cornell.edu/), a bird sound recognition program developed by the [Cornell Center for Conservation Bioacoustics](https://www.birds.cornell.edu/ccb/).  There's a BirdNET app you can use directly on your phone for on-the-go bird sound identifications, but more useful to me as a bioacoustics scientist is the [BirdNET Github repository](https://github.com/kahst/BirdNET-Lite). This is a promising free tool for processing a ton of audio data relatively quickly and understanding something about which avian species are present.
