@@ -18,7 +18,7 @@ output:
 
 # Background
 
-**Update 4/26/2022: [BirdNET was updated sometime in April 2022](https://github.com/kahst/BirdNET-Analyzer), so it's possible that everything I wrote about here got a lot easier and that none of this is relevant anymore.**
+**Update 4/26/2022: [BirdNET was updated in April 2022](https://github.com/kahst/BirdNET-Analyzer) and now the install process is much easier. Most of the guidance below is no longer relevant. The workflow I now use for installing BirdNET on Windows and running it from RStudio is captured [here at the R package NSNSDAcoustics](https://github.com/nationalparkservice/NSNSDAcoustics/blob/main/README.md).**
 
 **Note: if you're reading this from my blog, [you might want to read it from Github for better code formatting](https://github.com/cbalantic/cbalantic.github.io/blob/master/_posts/2022-03-07-Install-BirdNET-Windows-RStudio.md).**
 
